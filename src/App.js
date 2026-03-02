@@ -1,6 +1,7 @@
 import { useState } from "react"
 import RepetitionExercise from "./components/RepetitionExercise"
 import DurationExercise from "./components/DurationExercise"
+import RunningExercise from "./components/RunningExercise";
 
 export default function App() {
 
@@ -10,7 +11,7 @@ export default function App() {
     { name: "Push Ups", type: "repetition" },
     { name: "Jumping Jacks", type: "repetition" },
     { name: "Plank", type: "duration" },
-    { name: "Running", type: "duration" }
+    { name: "Running", type: "running" }
   ]
 
 
@@ -41,5 +42,9 @@ export default function App() {
     return (
       <DurationExercise name={selectedExercise.name} />
     )
+  }
+
+  if (selectedExercise.type === "running") {
+  return <RunningExercise name={selectedExercise.name} />
   }
 }
